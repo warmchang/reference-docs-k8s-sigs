@@ -1,3 +1,10 @@
+---
+title: kube-scheduler Extender (v1)
+content_type: tool-reference
+package: v1
+auto_generated: true
+---
+<p>Package v1 contains scheduler API objects.</p>
 
 
 ## Resource Types 

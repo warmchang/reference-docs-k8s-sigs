@@ -151,6 +151,13 @@ func processAPIPath(path string, includes []string, title string, mainPkg string
 		return nil, fmt.Errorf("no API packages found in %s", path)
 	}
 
+	// Packages found in the configured path own the page that is generated;
+	// packages pulled in through includes only contribute shared types.
+	primary := make(map[string]bool, len(gopkgs))
+	for _, p := range gopkgs {
+		primary[p.Path] = true
+	}
+
 	for _, p := range includes {
 		extra, err := parseAPIPackages(p)
 		if err != nil {
@@ -159,7 +166,7 @@ func processAPIPath(path string, includes []string, title string, mainPkg string
 		gopkgs = append(gopkgs, extra...)
 	}
 
-	pkgs, err := combineAPIPackages(gopkgs, title, mainPkg, resources)
+	pkgs, err := combineAPIPackages(gopkgs, primary, title, mainPkg, resources)
 	if err != nil {
 		return nil, err
 	}
@@ -220,7 +227,7 @@ func parseAPIPackages(dir string) ([]*types.Package, error) {
 
 // combineAPIPackages groups the Go packages by the <apiGroup+apiVersion> they
 // offer, and combines the types in them.
-func combineAPIPackages(pkgs []*types.Package, title string, mainPkg string, resources []string) ([]*apiPackage, error) {
+func combineAPIPackages(pkgs []*types.Package, primary map[string]bool, title string, mainPkg string, resources []string) ([]*apiPackage, error) {
 	pkgMap := make(map[string]*apiPackage)
 	re := `^v\d+((alpha|beta)\d+)?$`
 
@@ -253,11 +260,15 @@ func combineAPIPackages(pkgs []*types.Package, title string, mainPkg string, res
 				GoPackages: []*types.Package{gopkg},
 				Title:      title,
 				IsMain:     isMain,
+				IsPrimary:  primary[gopkg.Path],
 				Resources:  resources,
 			}
 		} else {
 			v.Types = append(v.Types, typeList...)
 			v.GoPackages = append(v.GoPackages, gopkg)
+			if primary[gopkg.Path] {
+				v.IsPrimary = true
+			}
 		}
 	}
 	// Sort this map

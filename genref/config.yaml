@@ -82,8 +82,9 @@ apis:
     package: k8s.io/kubelet
     path: config/v1
 
-  - name: kubelet-stats
-    title: Kubelet Stats (v1alpha1)
+  # Served by the kubelet over HTTP, not a configuration file format.
+  - name: stats
+    title: Kubelet Summary API (v1alpha1)
     package: k8s.io/kubelet
     path: pkg/apis/stats/v1alpha1
     resources:

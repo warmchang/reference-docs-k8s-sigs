@@ -1,3 +1,9 @@
+---
+title: Kubelet Summary API (v1alpha1)
+content_type: tool-reference
+package: v1alpha1
+auto_generated: true
+---
 
 
 ## Resource Types 
