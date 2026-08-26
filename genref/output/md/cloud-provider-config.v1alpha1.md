@@ -120,6 +120,14 @@ both in cloud controller manager and kube-controller manager.</p>
 related features.</p>
 </td>
 </tr>
+<tr><td><code>NodeLifecycleController</code> <B>[Required]</B><br/>
+<code>k8s.io/cloud-provider/controllers/nodelifecycle/config/v1alpha1.NodeLifecycleControllerConfiguration</code>
+</td>
+<td>
+   <p>NodeLifecycleController holds configuration for node lifecycle controller
+related features.</p>
+</td>
+</tr>
 <tr><td><code>ServiceController</code> <B>[Required]</B><br/>
 <a href="#ServiceControllerConfiguration"><code>ServiceControllerConfiguration</code></a>
 </td>
@@ -232,13 +240,6 @@ individual service account credentials.</p>
 </td>
 <td>
    <p>routeReconciliationPeriod is the period for reconciling routes created for Nodes by cloud provider..</p>
-</td>
-</tr>
-<tr><td><code>NodeMonitorPeriod</code> <B>[Required]</B><br/>
-<a href="https://pkg.go.dev/k8s.io/apimachinery/pkg/apis/meta/v1#Duration"><code>meta/v1.Duration</code></a>
-</td>
-<td>
-   <p>nodeMonitorPeriod is the period for syncing NodeStatus in NodeController.</p>
 </td>
 </tr>
 <tr><td><code>ClusterName</code> <B>[Required]</B><br/>

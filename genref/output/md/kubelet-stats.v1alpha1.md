@@ -93,7 +93,7 @@ the accelerator was actively processing.</p>
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -150,7 +150,7 @@ The &quot;core&quot; unit can be interpreted as CPU core-nanoseconds per second.
 </td>
 </tr>
 <tr><td><code>startTime</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which data collection for this container was (re)started.</p>
@@ -242,7 +242,7 @@ Logs.UsedBytes is the number of bytes used for the container logs.</p>
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -318,7 +318,7 @@ e.g. For ContainerStats.Rootfs, this is the inodes used only by that container, 
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -409,7 +409,7 @@ e.g. For ContainerStats.Rootfs, this is the inodes used only by that container, 
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -489,7 +489,7 @@ hugepages).</p>
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -498,7 +498,7 @@ hugepages).</p>
 <tr><td><code>InterfaceStats</code> <B>[Required]</B><br/>
 <a href="#InterfaceStats"><code>InterfaceStats</code></a>
 </td>
-<td>(Members of <code>InterfaceStats</code> are embedded into this type.)
+<td>
    <p>Stats for the default interface, if found</p>
 </td>
 </tr>
@@ -543,7 +543,7 @@ The system containers are named according to the SystemContainer* constants.</p>
 </td>
 </tr>
 <tr><td><code>startTime</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which data collection for the node-scoped (i.e. aggregate) stats was (re)started.</p>
@@ -786,7 +786,7 @@ Unit: nanoseconds.</p>
 </td>
 </tr>
 <tr><td><code>startTime</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which data collection for the pod-scoped (e.g. network) stats was (re)started.</p>
@@ -902,7 +902,7 @@ VolumeStats.UsedBytes is the number of bytes used by the Volume</p>
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <span class="text-muted">No description provided.</span></td>
@@ -984,7 +984,7 @@ Usage here refers to the total number of bytes occupied by the writeable layer o
     
   
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -1027,11 +1027,11 @@ If swap limit is undefined, this value is omitted.</p>
 <tr><td><code>UserDefinedMetricDescriptor</code> <B>[Required]</B><br/>
 <a href="#UserDefinedMetricDescriptor"><code>UserDefinedMetricDescriptor</code></a>
 </td>
-<td>(Members of <code>UserDefinedMetricDescriptor</code> are embedded into this type.)
+<td>
    <span class="text-muted">No description provided.</span></td>
 </tr>
 <tr><td><code>time</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    <p>The time at which these stats were updated.</p>
@@ -1109,33 +1109,6 @@ We do not foresee any metrics exceeding that value.</p>
 
 
 
-## `VolumeHealthStats`     {#VolumeHealthStats}
-    
-
-**Appears in:**
-
-- [VolumeStats](#VolumeStats)
-
-
-<p>VolumeHealthStats contains data about volume health.</p>
-
-
-<table class="table">
-<thead><tr><th width="30%">Field</th><th>Description</th></tr></thead>
-<tbody>
-    
-  
-<tr><td><code>abnormal</code> <B>[Required]</B><br/>
-<code>bool</code>
-</td>
-<td>
-   <p>Normal volumes are available for use and operating optimally.
-An abnormal volume does not meet these criteria.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
 ## `VolumeStats`     {#VolumeStats}
     
 
@@ -1155,7 +1128,7 @@ An abnormal volume does not meet these criteria.</p>
 <tr><td><code>FsStats</code> <B>[Required]</B><br/>
 <a href="#FsStats"><code>FsStats</code></a>
 </td>
-<td>(Members of <code>FsStats</code> are embedded into this type.)
+<td>
    <p>Embedded FsStats</p>
 </td>
 </tr>
@@ -1171,13 +1144,6 @@ An abnormal volume does not meet these criteria.</p>
 </td>
 <td>
    <p>Reference to the PVC, if one exists</p>
-</td>
-</tr>
-<tr><td><code>volumeHealthStats</code><br/>
-<a href="#VolumeHealthStats"><code>VolumeHealthStats</code></a>
-</td>
-<td>
-   <p>VolumeHealthStats contains data about volume health</p>
 </td>
 </tr>
 </tbody>
