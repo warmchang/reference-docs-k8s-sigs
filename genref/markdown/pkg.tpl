@@ -1,24 +1,14 @@
 {{ define "packages" -}}
 
 {{- range $idx, $val := .packages -}}
-{{/* Special handling for kubeconfig */}}
-{{- if eq .Title "kubeconfig (v1)" -}}
+{{- if .IsPrimary -}}
 ---
 title: {{ .Title }}
 content_type: tool-reference
-package: v1
-auto_generated: true
----
-{{- else -}}
-  {{- if and .IsMain (ne .GroupName "") -}}
----
-title: {{ .Title }}
-content_type: tool-reference
-package: {{ .DisplayName }}
+package: {{ if .GroupName }}{{ .DisplayName }}{{ else }}{{ .VersionName }}{{ end }}
 auto_generated: true
 ---
 {{ .GetComment -}}
-  {{- end -}}
 {{- end -}}
 {{- end }}
 

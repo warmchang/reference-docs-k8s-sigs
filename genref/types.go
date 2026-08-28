@@ -37,6 +37,11 @@ type apiPackage struct {
 	// IsMain is set if the package is the main one
 	IsMain bool
 
+	// IsPrimary is set if the package comes from the configured path of an
+	// API, rather than from one of its includes. Only a primary package
+	// owns the page that is generated for it.
+	IsPrimary bool
+
 	// Resources is the customized resource type names
 	Resources []string
 }
@@ -49,6 +54,12 @@ func (p *apiPackage) DisplayName() string {
 // GroupName returns the API group the package contains.
 func (p *apiPackage) GroupName() string {
 	return p.apiGroup
+}
+
+// VersionName returns the API version of the package. Packages that are not
+// part of an API group, such as the kubelet Summary API, only have a version.
+func (p *apiPackage) VersionName() string {
+	return p.apiVersion
 }
 
 // Anchor generates a valid anchor ID for an API package based on its name.

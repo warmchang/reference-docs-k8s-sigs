@@ -23,7 +23,7 @@ externalPackages:
   - match: ^io.Writer$
     target: https://pkg.go.dev/io#Writer
   - match: ^k8s\.io/(api|apimachinery/pkg/apis)/
-    target: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.36/#{{- lower .TypeIdentifier -}}-{{- arrIndex .PackageSegments -1 -}}-{{- arrIndex .PackageSegments -2 -}}
+    target: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.37/#{{- lower .TypeIdentifier -}}-{{- arrIndex .PackageSegments -1 -}}-{{- arrIndex .PackageSegments -2 -}}
 
 hideTypePatterns:
   - "ParseError$"
@@ -82,8 +82,9 @@ apis:
     package: k8s.io/kubelet
     path: config/v1
 
-  - name: kubelet-stats
-    title: Kubelet Stats (v1alpha1)
+  # Served by the kubelet over HTTP, not a configuration file format.
+  - name: stats
+    title: Kubelet Summary API (v1alpha1)
     package: k8s.io/kubelet
     path: pkg/apis/stats/v1alpha1
     resources:
@@ -138,6 +139,11 @@ apis:
     package: k8s.io/metrics
     # other version: v1alpha1
     path: pkg/apis/metrics/v1beta1
+
+  - name: metrics
+    title: Kubernetes Metrics (v1)
+    package: k8s.io/metrics
+    path: pkg/apis/metrics/v1
 
   - name: custom-metrics
     title: Kubernetes Custom Metrics (v1beta2)
